@@ -1,6 +1,15 @@
-# Release notes
+﻿# Release notes
 
 ## Next version
+* Add support for the following `Windows.System.Power.PowerManager` APIs on iOS and Android:
+    - BatteryStatus
+    - EnergySaverStatus
+    - PowerSupplyStatus
+    - RemainingChargePercent
+    - PowerSupplyStatusChanged
+    - EnergySaverStatusChanged
+    - RemainingChargePercentChanged
+    - BatteryStatusChanged
 
 ### Features
 * Add support for `ChatMessageManager.ShowComposeSmsMessageAsync` (and `ChatMessage` `Body` and `Recipients` properties) on iOS and Android
@@ -42,12 +51,19 @@
 * [Wasm] Add Samples App UI Screenshots diffing tool with previous builds
 * Add `PasswordVault` on supported platfrosm
 * [Android] Updated support libraries to 28.0.0.1 for Android 9
+* Add support for `x:Load`
+* [Wasm] Restore support for `x:Load` and `x:DeferLoadStrategy`
+* [Wasm] Scrolling bar visibility modes are now supported on most browsers
+* Add `Windows.Globalization.Calendar`
+* [Wasm] Support of overlay mode of the pane
+* Using _State Triggers_ in `VisualStateManager` now follows correct precedence as documented by Microsoft
 
 ### Breaking Changes
 * The `WebAssemblyRuntime.InvokeJSUnmarshalled` method with three parameters has been removed.
 * `NavigationBarHelper` has been removed.
 
 ### Bug fixes
+* DatePicker FlyoutPlacement now set to Full by default
 * Semi-transparent borders no longer overlap at the corners on Android
 * The `HAS_UNO` define is now not defined in `uap10.0.x` target frameworks.
 * The `XamlReader` fails when a property has no getter
@@ -82,8 +98,11 @@
 * [WASM] Dismissable popup & flyout is closing when tapping on content.
 * 145374 [Android] fixed android keyboard stays open on AppBarButton click
 * 152504 [Android] Pointer captures weren't informing gestures of capture, fixes Slider capture issue
-* 148896 [iOS] TextBlock CarriageReturns would continue past maxlines property 
-* [iOS] The `PointerReleased` event is not raised, so controls stay in pressed state.
+* 148896 [iOS] TextBlock CarriageReturns would continue past maxlines property
+* 153594 [Android] EdgeEffect not showing up on listView that contain Headers and Footers
+* #881 [iOS] Support explicitly-defined ListViewItems in ListView.
+* #902 [Android] Resource generation now correctly escapes names starting with numbers and names containing a '-' character
+* 154390 Storyboard `Completed` callback were not properly called when there's not children.
 
 ## Release 1.44.0
 
